@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.eight {
+.buttonFor8Col {
     width: 62px;
     height: 62px;
     border: 1px solid black;
@@ -22,7 +22,7 @@
     overflow: hidden;
 }
 
-.sixteen {
+.buttonFor16Col {
     width: 30px;
     height: 30px;
     border: 1px solid black;

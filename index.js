@@ -1,8 +1,8 @@
 const containerForColumn8 = document.getElementById("containerForColumn8");
 const containerForColumn16 = document.getElementById("containerForColumn16");
-const button = document.getElementById("myButtons");
-const eight = document.querySelector("#eight");
-const sixteen = document.querySelector("#sixteen");
+const gridButton = document.getElementById("gridButtons");
+const buttonFor8Col = document.querySelector("#buttonFor8Col");
+const buttonFor16Col = document.querySelector("#buttonFor16Col");
 const reset = document.querySelector(".reset")
 
 
@@ -14,41 +14,73 @@ function randomColor() {
     return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
-function tok() {
+function grid8col() {
     for (let d = 0; d < 64; d++) {
         const cellFor8Column = document.createElement("div");
-        cellFor8Column.classList.add("eight");
+        cellFor8Column.classList.add("buttonFor8Col");
         containerForColumn8.appendChild(cellFor8Column);
-        cellFor8Column.addEventListener("mouseover", function mouseOver() {
-            cellFor8Column.style.backgroundColor = randomColor();
+
+        black.addEventListener("click", function black(){
+            cellFor8Column.addEventListener("mouseover", function mouseOver() {
+                cellFor8Column.style.backgroundColor ="black";
+            });
+        });
+
+        rainbow.addEventListener("click", function rainbow(){
+            cellFor8Column.addEventListener("mouseover", function mouseOver() {
+                cellFor8Column.style.backgroundColor =randomColor();
+            });
+        });
+
+        white.addEventListener("click", function white(){
+            cellFor8Column.addEventListener("mouseover", function mouseOver() {
+                cellFor8Column.style.backgroundColor ="white";
+            });
         });
     }
 }
+     
 
-function pop() {
+function grid16col() {
     for (let d = 0; d < 256; d++) {
         const cellFor16Column = document.createElement("div");
-        cellFor16Column.classList.add("sixteen");
+        cellFor16Column.classList.add("buttonFor16Col");
         containerForColumn16.appendChild(cellFor16Column);
-        cellFor16Column.addEventListener("mouseover", function mouseOver() {
-            cellFor16Column.style.backgroundColor = randomColor();
+
+        black.addEventListener("click", function black(){
+            cellFor16Column.addEventListener("mouseover", function mouseOver() {
+                cellFor16Column.style.backgroundColor ="black";
+            });
+        });
+
+        rainbow.addEventListener("click", function rainbow(){
+            cellFor16Column.addEventListener("mouseover", function mouseOver() {
+                cellFor16Column.style.backgroundColor =randomColor();
+            });
+        });
+
+        white.addEventListener("click", function white(){
+            cellFor16Column.addEventListener("mouseover", function mouseOver() {
+                cellFor16Column.style.backgroundColor ="white";
+            });
         });
     }
 }
 
-const switchButtons = e => {
+
+const switchGridButtons = e => {
     e.target.nodeName === 'BUTTON';
-    if (e.target.id === "eight") {
+    if (e.target.id === "buttonFor8Col") {
         containerForColumn8.style.display = "grid";
         containerForColumn16.style.display = "none";
-        tok();
-    } else if (e.target.id === "sixteen") {
+        grid8col();
+    } else if (e.target.id === "buttonFor16Col") {
         containerForColumn16.style.display = "grid";
         containerForColumn8.style.display = "none";
-        pop();
+        grid16col();
     }
 }
-button.addEventListener("click", switchButtons);
+gridButton.addEventListener("click", switchGridButtons);
 
 reset.addEventListener("click", function refreshPage() {
     window.location.reload();
