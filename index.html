@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,28 @@
 </head>
 
 <body>
-    <div id="gridButtons">
-        <button id="buttonFor8Col">Grid 8 x 8</button>
-        <button id="buttonFor16Col">Grid 16 x 16 </button>
-    </div>
-    <div id="colorButtons">
-        <button id="rainbow">Rainbow</button>
-        <button id="black">Black </button>
-        <button id="white">Erase </button>
-    </div>
-    <button class="reset">Clear </button>
 
-    <div id="containerForColumn8"></div>
-    <div id="containerForColumn16"></div>
+    <h1>Eatch-a-Scretch</h1>
+    <section>
+
+        <div class="allButtons">
+            <div id="gridButtons">
+                <button id="buttonFor8Col" class="glow-on-hover" type="button">GRID 8 x 8 </button>
+                <button id="buttonFor16Col" class="glow-on-hover" type="button">GRID 16 x 16 </button>
+            </div>
+            <div id="colorButtons">
+                <button id="rainbow" class="glow-on-hover">RAINBOW</button>
+                <button id="black" class="glow-on-hover">GREY </button>
+                <button id="white" class="glow-on-hover">ERASE </button>
+             </div>
+                <button class="reset glow-on-hover">CLEAR </button>
+        </div>
+
+        <div class="containter">
+            <div id="containerForColumn8"></div>
+            <div id="containerForColumn16"></div>
+        </div>
+    </section>
 
     <script src="index.js"></script>
 </body>

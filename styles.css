@@ -1,3 +1,43 @@
+
+
+body {
+    background-color: #000119;
+    font-family: sans-serif;
+    min-block-size: 100vh;
+    place-items: center;
+    border: 3px solid black;
+}
+
+h1 {
+    background-clip: text;
+    background-image: linear-gradient(to right,
+            #09f1b8,
+            #00a2ff,
+            #ff00d2,
+            #fed90f);
+    background-color: #000119;
+    font-size: 10vmin;
+    font-weight: 600;
+    letter-spacing: calc(1em / 8);
+    padding: calc(calc(1em / 16) / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(1em / 16);
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+.allButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
 #containerForColumn8 {
     width: 510px;
     height: 510px;
@@ -5,6 +45,7 @@
     grid-template-columns: repeat(8, 1fr);
     display: none;
     overflow: hidden;
+    background-color: white;
 }
 
 .buttonFor8Col {
@@ -20,10 +61,115 @@
     grid-template-columns: repeat(16, 1fr);
     display: none;
     overflow: hidden;
+    background-color: white;
 }
 
 .buttonFor16Col {
     width: 30px;
     height: 30px;
     border: 1px solid black;
+}
+
+
+.glow-on-hover {
+    font-family: "Vast Shadow", serif;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #7a00ff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.glow-on-hover:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #9d0497;
+    left: 0;
+    top: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#rainbow:before,
+#black:before,
+#white:before,
+#rainbow:after,
+#black:after,
+#white:after,
+#rainbow,
+#black,
+#white {
+    border-radius: 50%;
+    width: 80px;
+    height: 70px;
+}
+
+#buttonFor8Col,
+#buttonFor16Col,
+#buttonFor8Col:before,
+#buttonFor16Col:before,
+#buttonFor8Col:after,
+#buttonFor16Col:after {
+    border-radius: 10px;
+    width: 125px;
+    height: 50px;
+}
+
+.reset,
+.reset:before,
+.reset:after {
+    border-radius: 15px 50px;
+    width: 100px;
+    height: 40px;
 }

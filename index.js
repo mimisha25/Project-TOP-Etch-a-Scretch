@@ -22,7 +22,7 @@ function grid8col() {
 
         black.addEventListener("click", function black(){
             cellFor8Column.addEventListener("mouseover", function mouseOver() {
-                cellFor8Column.style.backgroundColor ="black";
+                cellFor8Column.style.backgroundColor ="rgba(24, 23, 23, 0.671)";
             });
         });
 
@@ -49,7 +49,7 @@ function grid16col() {
 
         black.addEventListener("click", function black(){
             cellFor16Column.addEventListener("mouseover", function mouseOver() {
-                cellFor16Column.style.backgroundColor ="black";
+                cellFor16Column.style.backgroundColor ="rgba(24, 23, 23, 0.671)";
             });
         });
 
